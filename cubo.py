@@ -7,6 +7,8 @@ matriz_incial = np.array([[-100,100,100,1],[-100,100,-100,1],[100,100,100,1],[10
 matriz_aux = np.array([[1,0,0,0],[0,1,0,0],[0,0,0,distancia_focal],[0,0,-1/distancia_focal,0]])
 
 Matriz_R = np.array([[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]])
+Matriz_R_final = np.array([[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]])
+
 
 pygame.init()
 
@@ -22,7 +24,7 @@ rodando = True
 apertou = False
 
 angulo_x = 0.0  # ângulo de rotação em torno do eixo x
-velocidade_angular_x = 0.0015  # velocidade angular constante
+velocidade_angular_x = 0.0000035  # velocidade angular constante
 
 while rodando:
     # Capturar eventos
@@ -48,25 +50,25 @@ while rodando:
         apertou = True
     
     #se clicar a tecka a rotaciona o eixo z
-    if pygame.key.get_pressed()[pygame.K_a]:
+    if pygame.key.get_pressed()[pygame.K_q]:
         angulo_x += velocidade_angular_x
         Matriz_R = np.array([[np.cos(angulo_x),-np.sin(angulo_x),0,0],[np.sin(angulo_x),np.cos(angulo_x),0,0],[0,0,1,0],[0,0,0,1]])
         apertou = True
     
     #se clicar a tecka d rotaciona o eixo z
-    if pygame.key.get_pressed()[pygame.K_d]:
+    if pygame.key.get_pressed()[pygame.K_e]:
         angulo_x -= velocidade_angular_x
         Matriz_R = np.array([[np.cos(angulo_x),-np.sin(angulo_x),0,0],[np.sin(angulo_x),np.cos(angulo_x),0,0],[0,0,1,0],[0,0,0,1]])
         apertou = True
 
     #se clicar a tecka q rotaciona o eixo z
-    if pygame.key.get_pressed()[pygame.K_q]:
+    if pygame.key.get_pressed()[pygame.K_a]:
         angulo_x += velocidade_angular_x
         Matriz_R = np.array([[np.cos(angulo_x),0,np.sin(angulo_x),0],[0,1,0,0],[-np.sin(angulo_x),0,np.cos(angulo_x),0],[0,0,0,1]])
         apertou = True
     
     #se clicar a tecka e rotaciona o eixo z
-    if pygame.key.get_pressed()[pygame.K_e]:
+    if pygame.key.get_pressed()[pygame.K_d]:
         angulo_x -= velocidade_angular_x
         Matriz_R = np.array([[np.cos(angulo_x),0,np.sin(angulo_x),0],[0,1,0,0],[-np.sin(angulo_x),0,np.cos(angulo_x),0],[0,0,0,1]])
         apertou = True
@@ -96,8 +98,10 @@ while rodando:
 
     Matriz_T_Z = np.array([[1,0,0,0],[0,1,0,0],[0,0,1,200],[0,0,0,1]])
 
+    Matriz_R_final = Matriz_R @ Matriz_R_final
 
-    matriz_resultante = matriz_T @ matriz_aux @ Matriz_T_Z @ Matriz_R @ matriz_incial
+
+    matriz_resultante = matriz_T @ matriz_aux @ Matriz_T_Z @ Matriz_R_final @ matriz_incial
 
     # Desenhar a tela
 
