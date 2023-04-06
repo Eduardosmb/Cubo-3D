@@ -31,7 +31,15 @@ while rodando:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             rodando = False
-    
+
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 5: # scroll para baixo
+                distancia_focal -= 10
+                matriz_aux = np.array([[1,0,0,0],[0,1,0,0],[0,0,0,distancia_focal],[0,0,-1/distancia_focal,0]])
+            elif event.button == 4: # scroll para cima
+                distancia_focal += 10
+                matriz_aux = np.array([[1,0,0,0],[0,1,0,0],[0,0,0,distancia_focal],[0,0,-1/distancia_focal,0]])
+
 
     #se apertar a tecla I o cubo para de rotacionar
     if pygame.key.get_pressed()[pygame.K_i]:
@@ -74,20 +82,6 @@ while rodando:
     if pygame.key.get_pressed()[pygame.K_d]:
         angulo_x = - velocidade_angular_x
         Matriz_R = np.array([[np.cos(angulo_x),0,np.sin(angulo_x),0],[0,1,0,0],[-np.sin(angulo_x),0,np.cos(angulo_x),0],[0,0,0,1]])
-    
-
-        
-    #se girar com o scroll do mouse aumenta a distancia focal
-    if pygame.mouse.get_pressed()[1]:
-        distancia_focal += 1
-        matriz_aux = np.array([[1,0,0,0],[0,1,0,0],[0,0,0,distancia_focal],[0,0,-1/distancia_focal,0]])
-
-    #se girar com o scroll do mouse diminui a distancia focal
-    if pygame.mouse.get_pressed()[2]:
-        distancia_focal -= 1
-        matriz_aux = np.array([[1,0,0,0],[0,1,0,0],[0,0,0,distancia_focal],[0,0,-1/distancia_focal,0]])
-
-    
 
 
     # Transladar o cubo para o centro da tela
