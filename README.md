@@ -1,9 +1,10 @@
 # Cubo-3D
 Esse é um trabalho da disciplina Algebra Linear e Teoria da Informação, do curso ciências da computação do insper. A ideia é criar uma projeção 3D de um cubo, de maneira que seja possível controlar as direções em que o cubo gira e sua distância focal. Tudo isso tendo como base o funcionamento de uma câmera pinhole e um ponto de projeção.
 
-<p align="center">
-  ![video](https://user-images.githubusercontent.com/81189924/230253461-0b540ddd-aa79-4f48-a225-a3455552a9ae.gif)
-</p>
+
+
+https://user-images.githubusercontent.com/81189924/230254040-c7849c45-14c0-4aa9-9c75-d7fe4f4167aa.mp4
+
 
 
 ## Rodar o Pygame
