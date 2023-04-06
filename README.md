@@ -89,7 +89,7 @@ Assim, conseguimos realizar uma projeção de um cubo 3D em um plano 2D através
 
   
 $$
-R_x = \begin{bmatrix}
+\begin{bmatrix}
 1 & 0 & 0 & \Delta x \\
 0 & 1 & 0 & \Delta y\\
 0 & 0 & 1 & 0 \\
@@ -112,7 +112,7 @@ $$
   3. Multiplicamos a matriz de cima com uma matriz de translação do eixo Z, para podermos visualizar o cubo:
 
 $$
-R_x = \begin{bmatrix}
+\begin{bmatrix}
 1 & 0 & 0 & 0 \\
 0 & 1 & 0 & \Delta z\\
 0 & 0 & 1 & 0 \\
