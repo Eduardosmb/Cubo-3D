@@ -83,5 +83,57 @@ Wp\\
 \end{bmatrix}
 $$
 
+Assim, conseguimos realizar uma projeção de um cubo 3D em um plano 2D através do metodo pinhole. Agora, ainda precisamos realizar transformações de rotação com o cubo. Para isso, temos que fazer uma sequencia multiplicação de matrizes.
+
+  1. Criamos uma matriz para transladamos o cubo para o centro da tela:
+
+  
+$$
+R_x = \begin{bmatrix}
+1 & 0 & 0 & \Delta x \\
+0 & 1 & 0 & \Delta y\\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+
+
+  2. Multiplicamos a matriz de cima com a matriz pinhole:
+
+
+  3. Multiplicamos a matriz de cima com uma matriz de translação do eixo Z, para podermos visualizar o cubo:
+
+
+  4. multiplicamos o resultado por uma das matrizes de rotação:
+
+
+$$
+R_x = \begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & \cos(\theta) & -\sin(\theta) & 0 \\
+0 & \sin(\theta) & \cos(\theta) & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\hspace{0.5in}
+R_y = \begin{bmatrix}
+\cos(\theta) & 0 & \sin(\theta) & 0 \\
+0 & 1 & 0 & 0 \\
+-\sin(\theta) & 0 & \cos(\theta) & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\hspace{0.5in}
+R_z = \begin{bmatrix}
+\cos(\theta) & - \sin(\theta) & 0 & 0 \\
+\sin(\theta) & \cos(\theta) & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+
+
+
+
+  5. Por fim multiplicamos o resultado pela matriz inicial com as coordenadas do cubo:
+
 
 
