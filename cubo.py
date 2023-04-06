@@ -75,16 +75,19 @@ while rodando:
         angulo_x = - velocidade_angular_x
         Matriz_R = np.array([[np.cos(angulo_x),0,np.sin(angulo_x),0],[0,1,0,0],[-np.sin(angulo_x),0,np.cos(angulo_x),0],[0,0,0,1]])
     
-    # se clicar a tecla g dimiui a distancia focal
-    if pygame.key.get_pressed()[pygame.K_g]:
-        if distancia_focal > 1:
-            distancia_focal -= 1
-            matriz_aux = np.array([[1,0,0,0],[0,1,0,0],[0,0,0,distancia_focal],[0,0,-1/distancia_focal,0]])
+
         
-    # se clicar a tecla h aumenta a distancia focal
-    if pygame.key.get_pressed()[pygame.K_h]:
+    #se girar com o scroll do mouse aumenta a distancia focal
+    if pygame.mouse.get_pressed()[1]:
         distancia_focal += 1
         matriz_aux = np.array([[1,0,0,0],[0,1,0,0],[0,0,0,distancia_focal],[0,0,-1/distancia_focal,0]])
+
+    #se girar com o scroll do mouse diminui a distancia focal
+    if pygame.mouse.get_pressed()[2]:
+        distancia_focal -= 1
+        matriz_aux = np.array([[1,0,0,0],[0,1,0,0],[0,0,0,distancia_focal],[0,0,-1/distancia_focal,0]])
+
+    
 
 
     # Transladar o cubo para o centro da tela
