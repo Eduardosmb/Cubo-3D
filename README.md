@@ -1,6 +1,39 @@
 # Cubo-3D
 Esse é um trabalho da disciplina Algebra Linear e Teoria da Informação, do curso ciências da computação do insper. A ideia é criar uma projeção 3D de um cubo, de maneira que seja possível controlar as direções em que o cubo gira e sua distância focal. Tudo isso tendo como base o funcionamento de uma camera pinhole e um ponto de projeção.
 
+# Como jogar
+
+## Rodar
+  
+
+## Controles
+
+  - ### Para cima
+    Aperte a tecla "w" 
+
+  - ### Para baixo
+    Aperte a tecla "s" 
+
+  - ### Para esquerda
+    Aperte a tecla "a" 
+
+  - ### Para direita
+    Aperte a tecla "d" 
+
+  - ### Para girar sentido horário
+    Aperte a tecla "e" 
+ 
+  - ### Para girar sentido anti-horário
+    Aperte a tecla "e" 
+  
+  - ### Para trocar a cor do cubo
+    A perte a tecla "m". Cada vez que a tecla for apertada será sorteada uma tecla diferente
+  
+  - ### Para parar o cubo
+    Quando o cubo tiver em movimento aperte a tecla "i" e pressione qualquer direção para parar o cubo.
+  
+  - ### Para moviementar
+    Quando o cubo estiver parado aperte a tecla "o" e pressione qualquer direção para o cubo voltar a se movimentar.
 
 
 # Modelo matemático
