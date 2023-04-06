@@ -1,5 +1,5 @@
 # Cubo-3D
-Esse é um trabalho da disciplina Algebra Linear e Teoria da Informação, do curso ciências da computação do insper. A ideia é criar uma projeção 3D de um cubo, de maneira que seja possível controlar as direções em que o cubo gira e sua distância focal. Tudo isso tendo como base o funcionamento de uma camera pinhole e um ponto de projeção.
+Esse é um trabalho da disciplina Algebra Linear e Teoria da Informação, do curso ciências da computação do insper. A ideia é criar uma projeção 3D de um cubo, de maneira que seja possível controlar as direções em que o cubo gira e sua distância focal. Tudo isso tendo como base o funcionamento de uma câmera pinhole e um ponto de projeção.
 
 
 ## Rodar o Pygame
@@ -25,25 +25,25 @@ Esse é um trabalho da disciplina Algebra Linear e Teoria da Informação, do cu
 ## Controles
 
   - ### Para cima
-    Aperte a tecla "w" 
+    Aperte a tecla "w".
 
   - ### Para baixo
-    Aperte a tecla "s" 
+    Aperte a tecla "s".
 
   - ### Para esquerda
-    Aperte a tecla "a" 
+    Aperte a tecla "a".
 
   - ### Para direita
-    Aperte a tecla "d" 
+    Aperte a tecla "d".
 
   - ### Para girar sentido horário
-    Aperte a tecla "e" 
+    Aperte a tecla "e".
  
   - ### Para girar sentido anti-horário
-    Aperte a tecla "e" 
+    Aperte a tecla "e". 
   
   - ### Para trocar a cor do cubo
-    A perte a tecla "m". Cada vez que a tecla for apertada será sorteada uma tecla diferente
+    A perte a tecla "m". Cada vez que a tecla for apertada será sorteada uma tecla diferente.
   
   - ### Para parar o cubo
     Quando o cubo tiver em movimento aperte a tecla "i" e pressione qualquer direção para parar o cubo.
@@ -66,7 +66,7 @@ $$
 
   - Nesse caso o X0 e o Y0 representam o X e o Y iniciais do cubo, enquanto o 1 representa a dsitância focal escolhida.
 
-Agora, para chegarmos nos valores X e Y das projeções, podemos realizar uma semelhanca de traingulo:
+Agora, para chegarmos nos valores X e Y das projeções, podemos realizar uma semelhanca de triângulo:
 
 $$
   Tg(teta) = X0/Y0 = Xp/Yp
@@ -78,14 +78,14 @@ $$
   Xp = X0Yp/Y0
 $$
 
-Apartir disso criamos uma nova variavel Wp = Yp/Y0, que pode ser substituida na equacção acima, resultando em:
+A partir disso criamos uma nova variável Wp = Yp/Y0, que pode ser substituida na equação acima, resultando em:
 
 $$
   Xp = X0Wp
 $$
 
 
-Dessa forma já temos todos os dados necessários para descubrirmos os valores das coordenadas da nossa projeção. Portanto podemos montar a equação:
+Dessa forma já temos todos os dados necessários para descobrirmos os valores das coordenadas da nossa projeção. Portanto podemos montar a equação:
 
 $$
 \begin{bmatrix}
@@ -107,7 +107,7 @@ Wp\\
 \end{bmatrix}
 $$
 
-Agora que já sabemos fazer a transformação em 2D consguimos fazer em 3D. A lógica continua a mesma, porém agora iremos adicionar um novo ponto representando a dimensão Z.  Primeiramente iremos escolher uma das três dimensões para ser o pinhole, ou seja, uma dessas direções vai ser por onde iremos enxergar o cubo, desse modo ela será uma variável estática(sempre terá o mesmo valor). Dessa forma podemos construir as matrizes já apresentadas aneteriormente:
+Agora que já sabemos fazer a transformação em 2D consguimos fazer em 3D. A lógica continua a mesma, porém agora iremos adicionar um novo ponto representando a dimensão Z.  Primeiramente iremos escolher uma das três dimensões para ser o pinhole, ou seja, uma dessas direções vai ser por onde iremos enxergar o cubo, desse modo ela será uma variável estática(sempre terá o mesmo valor). Dessa forma podemos construir as matrizes já apresentadas anteriormente:
 
 $$
 \begin{bmatrix}
@@ -132,9 +132,9 @@ Wp\\
 \end{bmatrix}
 $$
 
-Assim, conseguimos realizar uma projeção de um cubo 3D em um plano 2D através do metodo pinhole. Agora, ainda precisamos realizar transformações de rotação com o cubo. Para isso, temos que fazer uma sequencia multiplicação de matrizes.
+Assim, conseguimos realizar uma projeção de um cubo 3D em um plano 2D através do método pinhole. Agora, ainda precisamos realizar transformações de rotação com o cubo. Para isso, temos que fazer uma sequência de multiplicação de matrizes.
 
-  1. Criamos uma matriz para transladamos o cubo para o centro da tela:
+  1. Criamos uma matriz para transladarmos o cubo para o centro da tela:
 
   
 $$
@@ -170,7 +170,7 @@ $$
 $$
 
 
-  4. multiplicamos o resultado por uma das matrizes de rotação:
+  4. Multiplicamos o resultado por uma das matrizes de rotação:
 
 
 $$
