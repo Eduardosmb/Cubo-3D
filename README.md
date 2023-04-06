@@ -100,8 +100,25 @@ $$
 
   2. Multiplicamos a matriz de cima com a matriz pinhole:
 
+$$
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & -d\\
+0 & -1/d & 0 \\
+\end{bmatrix}
+$$
+
 
   3. Multiplicamos a matriz de cima com uma matriz de translação do eixo Z, para podermos visualizar o cubo:
+
+$$
+R_x = \begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & \Delta z\\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
 
 
   4. multiplicamos o resultado por uma das matrizes de rotação:
@@ -133,7 +150,11 @@ $$
 
 
 
-  5. Por fim multiplicamos o resultado pela matriz inicial com as coordenadas do cubo:
+  5. Por fim multiplicamos o resultado pela matriz inicial com as coordenadas do cubo, chegando na seguinte equação:
+
+    matriz_resultante = matriz_Translação @ matriz_pinhole @ Matriz_Translação_Z @ Matriz_Rotação @ matriz_incia
+    
+ Onde "@" significa multiplicação matricial.
 
 
 
