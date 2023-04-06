@@ -3,7 +3,7 @@ Esse é um trabalho da disciplina Algebra Linear e Teoria da Informação, do cu
 
 
 
-https://user-images.githubusercontent.com/81189924/230254040-c7849c45-14c0-4aa9-9c75-d7fe4f4167aa.mp4
+![GIF](video.gif)
 
 
 
