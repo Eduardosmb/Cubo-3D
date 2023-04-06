@@ -1,10 +1,26 @@
 # Cubo-3D
 Esse é um trabalho da disciplina Algebra Linear e Teoria da Informação, do curso ciências da computação do insper. A ideia é criar uma projeção 3D de um cubo, de maneira que seja possível controlar as direções em que o cubo gira e sua distância focal. Tudo isso tendo como base o funcionamento de uma camera pinhole e um ponto de projeção.
 
-# Como jogar
 
-## Rodar
+## Rodar o Pygame
+
+  Para utilizar o programa, basta seguir os passos abaixo:
+
+  1. Instale o Python 3.8 ou superior;
+
+  2. Instale a biblioteca Numpy;
+     
+     ```pip install numpy```
+
+  3. Instale a biblioteca pygame;
+     
+     ```pip install pygame```
+
+  4. Para facilitar, basta instalar os requirements.txt, que contém todas as bibliotecas necessárias para o funcionamento do programa.
+   
+      ```pip install -r requirements.txt```
   
+  5. Após a instalação de tudo, basta apenas rodar o arquivo cubo.py, onde este abrirá uma janela, possibilitando a interação com o cubo. Para interagir com o cubo, basta ler os comandos presentes na sessão abaixo.
 
 ## Controles
 
