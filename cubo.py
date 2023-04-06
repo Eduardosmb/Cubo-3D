@@ -125,7 +125,7 @@ while rodando:
 
 
     # Matriz de translação ao longo do eixo z
-    Matriz_T_Z = np.array([[1,0,0,0],[0,1,0,0],[0,0,1,200],[0,0,0,1]])
+    Matriz_T_Z = np.array([[1,0,0,0],[0,1,0,0],[0,0,1,300],[0,0,0,1]])
 
     #Multiplicação de matrizes para obter a matriz de rotação final  que será usada posteriormente para rotacionar o cubo nos eixos x, y e z.
     Matriz_R_final = Matriz_R @ Matriz_R_final
