@@ -34,8 +34,9 @@ while rodando:
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 5: # scroll para baixo
-                distancia_focal -= 10
-                matriz_aux = np.array([[1,0,0,0],[0,1,0,0],[0,0,0,distancia_focal],[0,0,-1/distancia_focal,0]])
+                if distancia_focal > 10:
+                    distancia_focal -= 10
+                    matriz_aux = np.array([[1,0,0,0],[0,1,0,0],[0,0,0,distancia_focal],[0,0,-1/distancia_focal,0]])
             elif event.button == 4: # scroll para cima
                 distancia_focal += 10
                 matriz_aux = np.array([[1,0,0,0],[0,1,0,0],[0,0,0,distancia_focal],[0,0,-1/distancia_focal,0]])
